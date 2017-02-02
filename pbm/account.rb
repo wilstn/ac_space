@@ -1,15 +1,18 @@
 class Account
-  attr_accessor :balance, :name
+  attr_accessor :balance, :name, :transactions
 
   def initialize(starting_balance, name)
     @balance = starting_balance
     @name = name
+    @transactions = []
+    @txn_count = 0
   end
 
   def deposit(amount)
     @balance += amount
     puts "==========================="
     puts "You have deposited #{amount}.\n"
+    @transactions << "#{@txn_count += 1}. You have deposited #{amount}."
   end
 
   def withdraw(amount)
@@ -17,9 +20,11 @@ class Account
       @balance -= amount
       puts "==========================="
       puts "You have withdrawn #{amount}\n"
+      @transactions << "#{@txn_count += 1}. You have withdrawn #{amount}."
     else
       puts "==========================="
-      puts "dude you don't have that much money.\n"
+      puts "Insufficient funds.\n"
+      @transactions << "#{@txn_count += 1}. Tried to withdraw #{amount} but insufficient balance."
     end
   end
 end

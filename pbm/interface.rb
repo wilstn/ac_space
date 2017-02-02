@@ -10,7 +10,7 @@ class Interface
 
   def show_menu
     puts "==========================="
-    puts "\nPress 1 to display balance\nPress 2 to Deposit\nPress 3 to Withdraw\nPress any other key to exit."
+    puts "\nPress 1 to display balance\nPress 2 to Deposit\nPress 3 to Withdraw\nPress 4 to view transactions\nPress any other key to exit."
     print ">> "
     user_input = gets.chomp.to_i
     if user_input == 1
@@ -19,6 +19,8 @@ class Interface
       add_balance
     elsif user_input == 3
       withdraw_balance
+    elsif user_input == 4
+      show_transactions
     else
       puts "Exiting program."
       exit
@@ -42,7 +44,17 @@ class Interface
   end
 
   def show_balance
+    puts "==========================="
     print "Your balance is $#{@cust_account.balance}\n"
+    show_menu
+  end
+
+  def show_transactions
+    puts "----Txn Start----"
+    @cust_account.transactions.each do |line|
+      puts line
+    end
+    puts "-----Txn End-----"
     show_menu
   end
 
@@ -57,13 +69,13 @@ class Interface
   end
 
   def save_data
-    client_data = {"name" => @cust_account.name, "balance" => @cust_account.balance}
+    client_data = {"name" => @cust_account.name, "balance" => @cust_account.balance, "transactions" => @cust_account.transactions}
     File.open("account_info.yml", "w"){|f| f.write(client_data.to_yaml)}
   end
 
-  def load_data
-    existing_account = YAML.load(File.open("account_info.yml")) if File.exist?("account_info.yml")
-    @cust_account = Account.new(existing_account["balance"], existing_account["name"])
-    show_menu
-  end
+  # def load_data
+  #   existing_account = YAML.load(File.open("account_info.yml")) if File.exist?("account_info.yml")
+  #   @cust_account = Account.new(existing_account["balance"], existing_account["name"])
+  #   show_menu
+  # end
 end
