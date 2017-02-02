@@ -1,10 +1,10 @@
 class Account
   attr_accessor :balance, :name, :transactions
 
-  def initialize(starting_balance, name)
+  def initialize(starting_balance, name, transactions=[])
     @balance = starting_balance
     @name = name
-    @transactions = []
+    @transactions = transactions
     @txn_count = 0
   end
 

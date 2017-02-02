@@ -4,8 +4,14 @@ require 'yaml'
 class Interface
 
   def initialize
-    create_account
-    @account = create_account
+    # create_account
+    # @account = create_account
+    if File.exist?("account_info.yml")
+      load_data
+    else
+      create_account
+      @account = create_account
+    end
   end
 
   def show_menu
@@ -73,9 +79,11 @@ class Interface
     File.open("account_info.yml", "w"){|f| f.write(client_data.to_yaml)}
   end
 
-  # def load_data
-  #   existing_account = YAML.load(File.open("account_info.yml")) if File.exist?("account_info.yml")
-  #   @cust_account = Account.new(existing_account["balance"], existing_account["name"])
-  #   show_menu
-  # end
+  def load_data
+    existing_account = YAML.load(File.open("account_info.yml")) if File.exist?("account_info.yml")
+    @cust_account = Account.new(existing_account["balance"], existing_account["name"], existing_account["transactions"])
+    puts "==========================="
+    puts "Welcome back #{@cust_account.name}"
+    show_menu
+  end
 end
