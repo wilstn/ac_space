@@ -1,6 +1,7 @@
 ---
 name: tommy
-balance: 380
+balance: 430
 transactions:
 - 1. You have deposited 300.
 - 2. You have withdrawn 20.
+- 1. You have deposited 50.

@@ -61,6 +61,8 @@ class Interface
       puts line
     end
     puts "-----Txn End-----"
+    puts "Press <enter> to continue."
+    gets
     show_menu
   end
 
