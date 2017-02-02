@@ -8,17 +8,18 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    puts "You have deposited #{amount}."
-    puts "Your current balance is #{@balance}."
+    puts "==========================="
+    puts "You have deposited #{amount}.\n"
   end
 
   def withdraw(amount)
     if amount <= @balance
       @balance -= amount
-      puts "You have withdrawn #{amount}"
-      puts "Your current balance is #{@balance}."
+      puts "==========================="
+      puts "You have withdrawn #{amount}\n"
     else
-      puts "dude you don't have that much money."
+      puts "==========================="
+      puts "dude you don't have that much money.\n"
     end
   end
 end
