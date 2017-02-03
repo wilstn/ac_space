@@ -2,12 +2,13 @@
 name: john
 open_date: 03/02/2017 09:33
 pin: 1234
-balance: 870
+balance: 1870
 transactions:
-- "Txn 1.\t 03/02/2017 09:33\t You have deposit $1000\t Remaining balance: 1000"
+- "Txn 1.\t 03/02/2017 09:33\t You have deposited $1000\t Remaining balance: 1000"
 - "Txn 2.\t 03/02/2017 09:34\t You have withdrawn $200\t Remaining balance: 800"
 - "Txn 3.\t 03/02/2017 09:42\t You have withdrawn $0\t Remaining balance: 800"
-- "Txn 4.\t 03/02/2017 09:42\t You have deposit $100\t Remaining balance: 900"
-- "Txn 5.\t 03/02/2017 09:43\t You have deposit $0\t Remaining balance: 900"
+- "Txn 4.\t 03/02/2017 09:42\t You have deposited $100\t Remaining balance: 900"
+- "Txn 5.\t 03/02/2017 09:43\t You have deposited $0\t Remaining balance: 900"
 - "Txn 6.\t 03/02/2017 09:43\t You have withdrawn $30\t Remaining balance: 870"
-txn_no: 6
+- "Txn 7.\t 03/02/2017 19:06\t You have deposited $1000\t\t Remaining balance: 1870"
+txn_no: 7

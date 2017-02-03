@@ -1,0 +1,10 @@
+--- !ruby/object:Account
+name: peter
+open_date: 03/02/2017 19:13
+pin: 1234
+balance: 800
+transactions:
+- "Txn 1.\t 03/02/2017 19:14\t You have deposited $1000\t\t Remaining balance: 1000"
+- "Txn 2.\t 03/02/2017 19:14\t You have withdrawn $500\t\t Remaining balance: 500"
+- "Txn 3.\t 03/02/2017 19:14\t You have deposited $300\t\t Remaining balance: 800"
+txn_no: 3

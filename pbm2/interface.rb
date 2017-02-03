@@ -48,7 +48,8 @@ class Interface
       if @cust.pin == user_pin
         menu
       else
-        # puts "Incorrect pin entered. Returning to start menu.."
+        puts "Incorrect pin entered. Returning to start menu.."
+        sleep(2)
         start_menu
       end
     end
@@ -154,6 +155,7 @@ class Interface
       @cust = YAML.load(File.open("#{user_name}_account_info.yml"))
     else
       puts "Unable to log in. User: #{user_name} does not exist."
+      sleep(2)
     end
   end
 
