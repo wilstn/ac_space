@@ -4,19 +4,24 @@ require 'yaml'
 class Interface
 
   def initialize
-    # create_account
-    # @account = create_account
+    create_account
+    @cust_account = create_account
+
     if File.exist?("account_info.yml")
       load_data
     else
       create_account
-      @account = create_account
+      @cust_account = create_account
     end
   end
 
   def show_menu
-    puts "==========================="
-    puts "\nPress 1 to display balance\nPress 2 to Deposit\nPress 3 to Withdraw\nPress 4 to view transactions\nPress any other key to exit."
+    puts "===========================
+    \nPress 1 to display balance
+    \nPress 2 to Deposit
+    \nPress 3 to Withdraw
+    \nPress 4 to view transactions
+    \nPress any other key to exit."
     print ">> "
     user_input = gets.chomp.to_i
     if user_input == 1

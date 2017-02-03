@@ -1,7 +1,5 @@
 ---
-name: tommy
-balance: 430
+name: lop
+balance: 200
 transactions:
-- 1. You have deposited 300.
-- 2. You have withdrawn 20.
-- 1. You have deposited 50.
+- 1. You have deposited 100.
