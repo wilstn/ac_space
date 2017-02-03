@@ -29,7 +29,7 @@ class Account
       puts "="*20
       puts "You have deposited $#{amount}".green
       puts "="*20
-      @transactions << "Txn #{@txn_no += 1}.\t #{Time.now.strftime("%d/%m/%Y %H:%M")}\t You have deposit $#{amount}\t Remaining balance: #{@balance}"
+      @transactions << "Txn #{@txn_no += 1}.\t #{Time.now.strftime("%d/%m/%Y %H:%M")}\t You have deposit $#{amount}\t\t Remaining balance: #{@balance}"
     end
   end
 
@@ -45,7 +45,7 @@ class Account
       puts "="*20
       puts "You have withdrawn $#{amount}".green
       puts "="*20
-      @transactions << "Txn #{@txn_no += 1}.\t #{Time.now.strftime("%d/%m/%Y %H:%M")}\t You have withdrawn $#{amount}\t Remaining balance: #{@balance}"
+      @transactions << "Txn #{@txn_no += 1}.\t #{Time.now.strftime("%d/%m/%Y %H:%M")}\t You have withdrawn $#{amount}\t\t Remaining balance: #{@balance}"
     end
   end
 
