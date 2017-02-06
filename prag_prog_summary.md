@@ -5,12 +5,12 @@
     * Admit errors and mistakes.
     * Offer options or solutions, not excuses.
 
-2. One broken window
-    Don't leave bad designs, wrong decisions, poor code unfixed.
+2. One broken window   
+    Don't leave bad designs, wrong decisions, poor code unfixed.   
     It leads to software entropy.
 
-3. Stone soup and boiled frogs
-    Be a catalyst for change. Show them a glimpse and get them to rally around.
+3. Stone soup and boiled frogs   
+    Be a catalyst for change. Show them a glimpse and get them to rally around.   
     Remember the big picture.
 
 4. Good enough software
@@ -20,7 +20,7 @@
     * Give users something to play with early and their feedback may lead to better eventual solution.
     * Know when to stop. Step back with critical eye to view what's been done.
 
-5. Your knowledge portfolio
+5. Your knowledge portfolio   
     Learn new things regularly.
     Diversify your knowledge.
     Manage risk. Learn high risk high reward and conservative stuff.
@@ -55,15 +55,16 @@
 
 # Chap 2 - A Pragmatic Approach
 
-1. The evils of duplication
+1. The evils of duplication   
     Duplication causes maintenance nightmares.
 
     > "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system"
 
     Tip: Make it easy to reuse. If you fail to reuse, you risk duplicating knowledge.
 
-2. Orthogonality
-    Eliminate effects between unrelated things. Design self-contained components that are independent and with a single well-defined purpose.
+2. Orthogonality   
+    Eliminate effects between unrelated things. Design self-contained components that are independent and with a single well-defined purpose.   
+
     Design - Layering and Abstraction. If requirement for one item is changed, it should not affect other non-related systems.
 
     **Coding:**
@@ -73,17 +74,17 @@
 
     Testing - Unit tests and Bug fixes tests the orthogonality of the system as a whole. What does it take to build and link a unit test? How localized is the fix?
 
-3. Reversibility
+3. Reversibility   
     Requirements may change. Be prepared for contingencies. There are no final decisions.
 
-4. Tracer code
-    End-to-end connection among components of system to check how close to the target, adjusting if necessary.
+4. Tracer code   
+    End-to-end connection among components of system to check how close to the target, adjusting if necessary.   
     Tracer vs Prototyping. Tracer is lean but complete skeleton of final system. Prototype is disposable recon intel gathering code.
 
-5. Prototypes and Post-it Notes
+5. Prototypes and Post-it Notes   
     Prototype to learn. Can ignore details. Set expectations that prototype is not complete.
 
-6. Domain languages
+6. Domain languages   
     Program close to the problem domain?
 
 7. Estimating
