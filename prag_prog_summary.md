@@ -39,7 +39,7 @@
       * Experiment with different environments.
       * Stay current.
       * Get wired. Ins and outs of new language or technology.
-      
+
     Always be finding opportunities for learning.
     Critically analyze what you read and hear.
 
@@ -52,8 +52,6 @@
     * Involve your audience
     * Be a listener
     * Get back to people
-
-____
 
 # Chap 2 - A Pragmatic Approach
 
