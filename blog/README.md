@@ -5,4 +5,11 @@ A simple blog project assignment built using Rails and styled with Bootstrap.
 ##How to use
 * Clone the blog_proj repository
 * Start ```rails server```
-* View it on localhost
+* View it on localhost:3000   
+
+##Features
+* Add, edit, delete posts.
+
+##To-do-list?
+* Commenting functionality
+* Only logged in users can edit and destroy
