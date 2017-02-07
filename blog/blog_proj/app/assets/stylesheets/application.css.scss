@@ -28,11 +28,31 @@
   font-family: "Times New Roman", Times, serif;
 }
 .main-content .article{
-  line-height: 1.5;
+  line-height: 1.5em;
   font-size: 2em;
   width: 100%;
 }
 .post-publish-date{
   font-style: italic;
   color: lightgrey;
+}
+.form-area{
+  width: 550px;
+  margin: auto;
+}
+.form-area input{
+  width: 100%;
+}
+.posting-area{
+  height: 300px;
+  width: 100%;
+}
+.new-post, .edit-post{
+  text-align: center;
+}
+footer{
+  padding: 20px;
+  height: 150px;
+  background-color: lightgrey;
+  text-align: center;
 }
