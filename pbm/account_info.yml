@@ -1,5 +1,4 @@
 ---
-name: lop
-balance: 200
-transactions:
-- 1. You have deposited 100.
+name: ''
+balance: 0
+transactions: []

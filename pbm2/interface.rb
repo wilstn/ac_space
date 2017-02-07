@@ -31,18 +31,30 @@ class Interface
     end
   end
 
+  # def get_user_info
+  #   puts "Please input your name."
+  #   print "> "
+  #   name = gets.chomp.downcase
+  #   puts "Your 4 digit pin please:"
+  #   print "> "
+  #   pin = gets.chomp.to_i
+  #   return name, pin
+  # end
+
   def log_in
-    #check user_data name and pin match
+    # check user_data name and pin match
     puts "Existing user, please input your name."
     print "> "
     user_name = gets.chomp.downcase
+    retrieve_user_file(user_name)
     puts "Your 4 digit pin please:"
     print "> "
     user_pin = gets.chomp.to_i
-    retrieve_user_file(user_name)
     begin
       @cust.pin == user_pin
     rescue
+      puts "No such file, unable to compare."
+      sleep(2)
       start_menu
     else
       if @cust.pin == user_pin
@@ -56,6 +68,7 @@ class Interface
   end
 
   def menu
+    #will exit when user inputs invalid option?
     puts `clear`
     puts "="*40
     puts "Welcome #{@cust.name.capitalize}"
@@ -64,7 +77,8 @@ class Interface
     puts "2. Withdraw cash"
     puts "3. Check remaining balance"
     puts "4. Check transaction history"
-    puts "5. Quit"
+    puts "5. Return to start menu"
+    puts "6. Quit"
     puts "="*40
     print "Your choice: "
     user_choice = gets.chomp.to_i
@@ -78,14 +92,16 @@ class Interface
     when 4
       transaction_history
     when 5
+      start_menu
+    when 6
       save_data
-      puts "#{Account.count_account} accounts set up so far.."
+      puts "#{Account.count_account} accounts set up in this session.."
       print "Saving data and quitting program"
-      sleep(1)
+      sleep(0.5)
       print "."
-      sleep(1)
+      sleep(0.5)
       print "."
-      sleep(1)
+      sleep(0.5)
       print "."
       exit
     end
@@ -95,7 +111,11 @@ class Interface
     puts "Please input amount to deposit"
     print "> "
     amount = gets.chomp.to_i
-    @cust.deposit(amount)
+    if amount < 0
+      puts "Please input a positive number.".red
+    else
+      @cust.deposit(amount)
+    end
     puts "Press <ENTER> to return to menu.."
     gets
     menu
@@ -105,7 +125,13 @@ class Interface
     puts "Please input amount to withdraw"
     print "> "
     amount = gets.chomp.to_i
-    @cust.withdraw(amount)
+    if amount < 0
+      puts "Please input a positive number.".red
+    elsif @cust.balance < amount
+      puts "Transaction denied. Insufficient funds.".red
+    else
+      @cust.withdraw(amount)
+    end
     puts "Press <ENTER> to return to menu.."
     gets
     menu
@@ -129,6 +155,7 @@ class Interface
   end
 
   def check_balance
+    #move to account class?
     puts "="*40
     puts "Your current balance is: $#{@cust.balance}".green
     puts "="*40
@@ -138,6 +165,7 @@ class Interface
   end
 
   def transaction_history
+    #move to account class?
     txn = @cust.transactions
     puts "-"*100
     puts printf("%-8s %-23s %-30s", "No.","Timestamp","Message")
@@ -156,6 +184,7 @@ class Interface
     else
       puts "Unable to log in. User: #{user_name} does not exist."
       sleep(2)
+      start_menu
     end
   end
 

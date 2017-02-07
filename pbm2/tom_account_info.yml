@@ -1,7 +1,0 @@
---- !ruby/object:Account
-name: tom
-open_date: 03/02/2017 19:07
-pin: 1234
-balance: 0
-transactions: []
-txn_no: 0
