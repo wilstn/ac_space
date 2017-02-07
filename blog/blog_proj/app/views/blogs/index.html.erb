@@ -1,20 +1,27 @@
-<h1>Blog Header</h1>
-<h2>Listing articles</h2>
+<div class="jumbotron">
+  <div class="profilepic">
+    <%= image_tag("profilepic.jpg", alt: "Logo Image") %>
+  </div>
+  <h2>A Student's Blog</h2>
+  <q>Aspiring programmer..who knows if i will ever become one.</q>
+</div>
 
-<table>
-
+<section class="main-content">
   <% @blogs.each do |blog_post| %>
-    <tr>
-      <td><%= blog_post.title %></td>
-      <td><%= blog_post.category %></td>
-      <td><%= blog_post.author %></td>
-      <td><%= blog_post.post %></td>
-      <td><%= link_to 'Edit', edit_blog_path(blog_post) %></td>
-      <td><%= link_to 'Destroy', blog_path(blog_post),
+    <article>
+      <h1><%= blog_post.title %></h1>
+      <p class="post-publish-date">Posted on <%= blog_post.created_at.strftime("%d %b %y")%></p>
+      <hr>
+      <main><%= simple_format(blog_post.post) %></main>
+      <br>
+      <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+      <%= link_to 'Edit', edit_blog_path(blog_post) %>
+      <span>&nbsp|&nbsp&nbsp</span>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      <%= link_to 'Destroy', blog_path(blog_post),
               method: :delete,
-              data: {confirm: 'Are you sure?'} %></td>
-    </tr>
+              data: {confirm: 'Are you sure?'} %>
+    </article>
+    <br>
   <% end %>
-</table>
-
-<%= link_to 'New Post', new_blog_path %>
+</section>

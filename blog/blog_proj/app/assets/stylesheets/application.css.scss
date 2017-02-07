@@ -1,0 +1,38 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar{
+  margin: 0;
+  background-color: white;
+}
+.navbar .btn{
+  margin: 15px;
+}
+.jumbotron{
+  background-color: #E1F2FF;
+  text-align: center;
+  color: #4B5E63;
+}
+.jumbotron .profilepic{
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: auto;
+}
+.main-content{
+  width: 550px;
+  margin: auto;
+}
+.main-content h1{
+  font-family: "Times New Roman", Times, serif;
+}
+.main-content .article{
+  line-height: 1.5;
+  font-size: 2em;
+  width: 100%;
+}
+.post-publish-date{
+  font-style: italic;
+  color: lightgrey;
+}
