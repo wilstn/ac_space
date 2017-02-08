@@ -1,6 +1,6 @@
 <div class="container">
   <div class="form-area">
-    <% if @blog.errors.any? %>
+    <!-- <% if @blog.errors.any? %>
         <div id="error_explanation">
           <ul>
             <% @blog.errors.full_messages.each do |msg| %>
@@ -11,7 +11,7 @@
             <% end %>
           </ul>
         </div>
-      <% end %>
+      <% end %> -->
     <%= form_for @blog, :html => {:class => "form"}, :validate => true do |f| %>
       <div class="form-group">
         <%= f.label :title %><br>
