@@ -12819,3 +12819,679 @@ Processing by BlogsController#index as HTML
 Completed 200 OK in 86ms (Views: 77.3ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:13:19 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  Rendered blogs/index.html.erb within layouts/application (635.1ms)
+Completed 500 Internal Server Error in 686ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `markdown' for #<#<Class:0x007fba15f8c6a0>:0x007fba15fafc90>):
+    12:       <h2><%= link_to blog_post.title, blog_path(blog_post) %></h2>
+    13:       <p class="post-publish-date">Posted on <%= blog_post.created_at.strftime("%d %b %y")%></p>
+    14:       <hr>
+    15:       <main><%= markdown.render(blog_post.post) %></main>
+    16:     </article>
+    17:   <% end %>
+    18:   <%= paginate @blogs %>
+  
+app/views/blogs/index.html.erb:15:in `block in _app_views_blogs_index_html_erb___362740558182933811_70218604638360'
+app/views/blogs/index.html.erb:10:in `_app_views_blogs_index_html_erb___362740558182933811_70218604638360'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.4ms)
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:16:09 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  Rendered blogs/index.html.erb within layouts/application (89.4ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `markdown' for #<#<Class:0x007fba15f8c6a0>:0x007fba160d5e58>):
+    12:       <h2><%= link_to blog_post.title, blog_path(blog_post) %></h2>
+    13:       <p class="post-publish-date">Posted on <%= blog_post.created_at.strftime("%d %b %y")%></p>
+    14:       <hr>
+    15:       <main><%= markdown(blog_post.post) %></main>
+    16:     </article>
+    17:   <% end %>
+    18:   <%= paginate @blogs %>
+  
+app/views/blogs/index.html.erb:15:in `block in _app_views_blogs_index_html_erb___362740558182933811_70218605311000'
+app/views/blogs/index.html.erb:10:in `_app_views_blogs_index_html_erb___362740558182933811_70218605311000'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.2ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.4ms)
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:16:54 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 153ms (Views: 139.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:16:54 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (4.9ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.7ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (126.9ms)
+Started GET "/blogs/new" for 127.0.0.1 at 2017-02-09 01:17:31 +0800
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (26.2ms)
+  Rendered blogs/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 79ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:17:31 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (6.1ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.0ms)
+Started POST "/blogs" for 127.0.0.1 at 2017-02-09 01:18:32 +0800
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Qzg8159tu9aF7d8PVLVX5vyhqJRbaSg/eGOSGiwyrAr3ekh8XBt/hU+Uo60u86CEZeo1ZdmUhc2H5IpF+Dafw==", "blog"=>{"title"=>"Testing post using markdown", "category"=>"testing", "author"=>"tommy", "post"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."title" = ? LIMIT ?[0m  [["title", "Testing post using markdown"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "category", "author", "post", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Testing post using markdown"], ["category", "testing"], ["author", "tommy"], ["post", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!"], ["created_at", 2017-02-08 17:18:32 UTC], ["updated_at", 2017-02-08 17:18:32 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 35ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:18:32 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:18:32 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (4.5ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (117.1ms)
+Started GET "/blogs/26" for 127.0.0.1 at 2017-02-09 01:19:10 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 33.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/26/edit" for 127.0.0.1 at 2017-02-09 01:19:13 +0800
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (8.1ms)
+  Rendered blogs/edit.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 57ms (Views: 47.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/blogs/26" for 127.0.0.1 at 2017-02-09 01:19:21 +0800
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AZL96u+/AyIsQb395R7ssBhB/gRJUyRxqFB+J5jF9fqsZ+Wzr6z9wVWccfO2kXXea9WsP/Y8+hZFNTLvc9GwEQ==", "blog"=>{"title"=>"Testing post using markdown", "category"=>"testing", "author"=>"tommy", "post"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n| Tables        | Are           | Cool  |\r\n| ------------- |:-------------:| -----:|\r\n| col 3 is      | right-aligned | $1600 |\r\n| col 2 is      | centered      |   $12 |\r\n| zebra stripes | are neat      |    $1 |"}, "commit"=>"Submit", "id"=>"26"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."title" = ? AND ("blogs"."id" != ?) LIMIT ?[0m  [["title", "Testing post using markdown"], ["id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "post" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["post", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n| Tables        | Are           | Cool  |\r\n| ------------- |:-------------:| -----:|\r\n| col 3 is      | right-aligned | $1600 |\r\n| col 2 is      | centered      |   $12 |\r\n| zebra stripes | are neat      |    $1 |"], ["updated_at", 2017-02-08 17:19:21 UTC], ["id", 26]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:19:21 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:19:21 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (5.6ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (122.2ms)
+Started GET "/blogs/26" for 127.0.0.1 at 2017-02-09 01:19:53 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/26/edit" for 127.0.0.1 at 2017-02-09 01:20:36 +0800
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (7.0ms)
+  Rendered blogs/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/blogs/26" for 127.0.0.1 at 2017-02-09 01:23:49 +0800
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ATAGBYL9Q7oykNyy6HfokrWDPM8qe/aJh/IQNjmcD5V8dhBVhgL7ZEXj3yYLkbMOUJeyIPGMb3LeoSIM/I11Q==", "blog"=>{"title"=>"Testing post using markdown", "category"=>"testing", "author"=>"tommy", "post"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n``` some code would go into here ```\r\n\r\nyou can have tasklists as well:\r\n- [x] task 1\r\n- [ ] task 2\r\n\r\n Tables        | Are           \r\n------------- |-------------\r\n col 3 is      | right-aligned \r\n col 2 is      | centered"}, "commit"=>"Submit", "id"=>"26"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."title" = ? AND ("blogs"."id" != ?) LIMIT ?[0m  [["title", "Testing post using markdown"], ["id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "post" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["post", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n``` some code would go into here ```\r\n\r\nyou can have tasklists as well:\r\n- [x] task 1\r\n- [ ] task 2\r\n\r\n Tables        | Are           \r\n------------- |-------------\r\n col 3 is      | right-aligned \r\n col 2 is      | centered"], ["updated_at", 2017-02-08 17:23:49 UTC], ["id", 26]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 8ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:23:49 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 52ms (Views: 48.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:23:49 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (5.2ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (114.3ms)
+Started GET "/blogs/26" for 127.0.0.1 at 2017-02-09 01:24:02 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (3.6ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 45ms (Views: 38.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/blogs/26/edit" for 127.0.0.1 at 2017-02-09 01:24:11 +0800
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (4.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (6.7ms)
+  Rendered blogs/edit.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 48ms (Views: 40.8ms | ActiveRecord: 4.0ms)
+
+
+Started PATCH "/blogs/26" for 127.0.0.1 at 2017-02-09 01:24:32 +0800
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"it7WReVvoq4172MhBYI+r54+mRJ9IH3pB7rIQo7ZJC4nK84cpXxcTUwyry9WDafB7arLKcJPo47q34SKZc1hxQ==", "blog"=>{"title"=>"Testing post using markdown", "category"=>"testing", "author"=>"tommy", "post"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n``` Code block section:\r\nsome code would go into here ```"}, "commit"=>"Submit", "id"=>"26"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."title" = ? AND ("blogs"."id" != ?) LIMIT ?[0m  [["title", "Testing post using markdown"], ["id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "post" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["post", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n``` Code block section:\r\nsome code would go into here ```"], ["updated_at", 2017-02-08 17:24:32 UTC], ["id", 26]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 9ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:24:32 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:24:32 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (8.0ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (148.5ms)
+Started GET "/blogs/26" for 127.0.0.1 at 2017-02-09 01:24:57 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/26/edit" for 127.0.0.1 at 2017-02-09 01:25:01 +0800
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (8.9ms)
+  Rendered blogs/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 51ms (Views: 42.6ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/blogs/26" for 127.0.0.1 at 2017-02-09 01:25:08 +0800
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4npA+/mvVxEWX2Mlc5FwYqrRqdRuB/3Z78Nnxwabet9Pj1iiubyp8m+CrysgHukM2UX779FoI74CpisP7Y8/NA==", "blog"=>{"title"=>"Testing post using markdown", "category"=>"testing", "author"=>"tommy", "post"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n``` Code block section:\r\nsome code would go into here \r\n```"}, "commit"=>"Submit", "id"=>"26"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."title" = ? AND ("blogs"."id" != ?) LIMIT ?[0m  [["title", "Testing post using markdown"], ["id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "post" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["post", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n``` Code block section:\r\nsome code would go into here \r\n```"], ["updated_at", 2017-02-08 17:25:08 UTC], ["id", 26]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 11ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:25:08 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:25:09 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (3.7ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (118.3ms)
+Started GET "/blogs/26" for 127.0.0.1 at 2017-02-09 01:26:29 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/26/edit" for 127.0.0.1 at 2017-02-09 01:26:32 +0800
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (5.6ms)
+  Rendered blogs/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 51ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/blogs/26" for 127.0.0.1 at 2017-02-09 01:27:02 +0800
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iai/m1Cih3S5/VVXDcvluBwt48kvp/PRQlj8mYYXEz6MXafCELF5l8AgmVleRHzWb7mx8pDILbavPbBRbQNW1Q==", "blog"=>{"title"=>"Testing post using markdown", "category"=>"testing", "author"=>"tommy", "post"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n```javascript\r\nvar s = \"JavaScript syntax highlighting\";\r\nalert(s);\r\n```"}, "commit"=>"Submit", "id"=>"26"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."title" = ? AND ("blogs"."id" != ?) LIMIT ?[0m  [["title", "Testing post using markdown"], ["id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "post" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["post", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n```javascript\r\nvar s = \"JavaScript syntax highlighting\";\r\nalert(s);\r\n```"], ["updated_at", 2017-02-08 17:27:02 UTC], ["id", 26]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 7ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:27:02 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:27:02 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (3.3ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (113.7ms)
+Started GET "/blogs/26" for 127.0.0.1 at 2017-02-09 01:27:41 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 51ms (Views: 45.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/26/edit" for 127.0.0.1 at 2017-02-09 01:27:43 +0800
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (7.7ms)
+  Rendered blogs/edit.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 58ms (Views: 52.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/blogs/26" for 127.0.0.1 at 2017-02-09 01:27:51 +0800
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T9JXx8S85M7KqgVEOZ/lVtobCPORcYhRiAr1ajOCojniJ0+ehK8aLbN3yUpqEHw4qY9ayC4eVjZlb7mi2Jbn0g==", "blog"=>{"title"=>"Testing post using markdown", "category"=>"testing", "author"=>"tommy", "post"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n```javascript\r\nvar s = \"JavaScript syntax highlighting\";\r\nalert(s);\r\n```\r\n\r\nMarkdown | Less | Pretty\r\n--- | --- | ---\r\n*Still* | `renders` | **nicely**\r\n1 | 2 | 3"}, "commit"=>"Submit", "id"=>"26"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."title" = ? AND ("blogs"."id" != ?) LIMIT ?[0m  [["title", "Testing post using markdown"], ["id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "blogs" SET "post" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["post", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n### My List of Things To Do!\r\n\r\n  Here is the list of things I wish to do!\r\n\r\n  * write more posts\r\n  * write even more posts\r\n  * write even more posts!\r\n\r\n> Testing a blockquote here..\r\n> Wise words of wisdom here..\r\n\r\n```javascript\r\nvar s = \"JavaScript syntax highlighting\";\r\nalert(s);\r\n```\r\n\r\nMarkdown | Less | Pretty\r\n--- | --- | ---\r\n*Still* | `renders` | **nicely**\r\n1 | 2 | 3"], ["updated_at", 2017-02-08 17:27:51 UTC], ["id", 26]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/blogs
+Completed 302 Found in 8ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 01:27:51 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 01:27:51 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (10.3ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (115.6ms)
