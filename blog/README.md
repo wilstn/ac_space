@@ -13,3 +13,5 @@ A simple blog project assignment built using Rails and styled with Bootstrap.
 ##To-do-list?
 * Commenting functionality
 * Only logged in users can edit and destroy
+* Separate the css files for different items into different css files and import them in application.css.scss
+* Try import gem to enable parse markdown inputs???
