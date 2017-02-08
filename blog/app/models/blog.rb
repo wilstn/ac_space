@@ -7,6 +7,6 @@ class Blog < ApplicationRecord
                     length: { minimum: 5 },
                     format: { without: /\d/, message: "No numbers allowed"}
 
-  validates :post, presence: true,
-                    length: {minimum: 250, maximum: 2000}
+  validates :post, presence: true
+                    # length: {minimum: 250, maximum: 2000}
 end
