@@ -1,5 +1,17 @@
 <div class="container">
   <div class="form-area">
+    <% if @blog.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @blog.errors.full_messages.each do |msg| %>
+              <div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong><%= msg %></strong>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     <%= form_for @blog, :html => {:class => "form"} do |f| %>
       <div class="form-group">
         <%= f.label :title %><br>
