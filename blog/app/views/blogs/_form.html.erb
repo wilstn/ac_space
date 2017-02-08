@@ -12,7 +12,7 @@
           </ul>
         </div>
       <% end %>
-    <%= form_for @blog, :html => {:class => "form"} do |f| %>
+    <%= form_for @blog, :html => {:class => "form"}, :validate => true do |f| %>
       <div class="form-group">
         <%= f.label :title %><br>
         <%= f.text_field :title %>

@@ -63,6 +63,15 @@
 .alert{
   width: 100%;
 }
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors .message {
+  color: #D00;
+  padding-left: 5px;
+  font-size: 12px;
+}
 footer{
   padding: 20px;
   height: 150px;
