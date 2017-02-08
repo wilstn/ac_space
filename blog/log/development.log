@@ -12178,3 +12178,205 @@ Processing by BlogsController#edit as HTML
 Completed 200 OK in 44ms (Views: 35.9ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 00:41:34 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY created_at DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (5.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193394959280 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193394959280 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193394959280 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193394959280 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+Completed 200 OK in 1822ms (Views: 1818.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 00:41:36 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (3.6ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (123.4ms)
+Started GET "/blogs/new" for 127.0.0.1 at 2017-02-09 00:41:38 +0800
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (4.4ms)
+  Rendered blogs/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 00:41:38 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (3.1ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (111.6ms)
+Started GET "/blogs/new" for 127.0.0.1 at 2017-02-09 00:42:05 +0800
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (4.0ms)
+  Rendered blogs/new.html.erb within layouts/application (5.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193388011860 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193388011860 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-form.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-form.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193388011860 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-header.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193388011860 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-content-body.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193388011860 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/wt/ac_space/blog/app/assets/stylesheets/blog-form.css.scss to /Users/wt/ac_space/blog/app/assets/stylesheets/blog-form.scss. (called from _app_views_layouts_application_html_erb__2708156205336672839_70193388011860 at /Users/wt/ac_space/blog/app/views/layouts/application.html.erb:7)
+Completed 200 OK in 1737ms (Views: 1733.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 00:42:06 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (4.4ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (113.6ms)
+Started GET "/blogs/new" for 127.0.0.1 at 2017-02-09 00:43:06 +0800
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (6.2ms)
+  Rendered blogs/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2017-02-09 00:43:06 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (8.8ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/wt/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (106.8ms)
+Started GET "/blogs" for 127.0.0.1 at 2017-02-09 00:43:39 +0800
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY created_at DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.5ms)
+
+
