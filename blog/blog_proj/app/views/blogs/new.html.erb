@@ -1,6 +1,7 @@
 <div class="new-post">
   <h2>Create New Post</h2>
 </div>
-
 <%= render 'form' %>
-<%= link_to 'Back', blogs_path %>
+<div class="back-button">
+  <%= link_to 'Discard', blogs_path, class: 'btn btn-info' %>
+</div>

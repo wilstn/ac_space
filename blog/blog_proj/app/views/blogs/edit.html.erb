@@ -2,4 +2,6 @@
   <h2>Editing post</h2>
 </div>
 <%= render 'form' %>
-<%= link_to 'Back', blogs_path %>
+<div class="back-button">
+  <%= link_to 'Cancel', blogs_path, class: 'btn btn-info' %>
+</div>
