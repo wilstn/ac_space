@@ -1,0 +1,65 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar{
+  margin: 0;
+  background-color: white;
+}
+.navbar .btn{
+  margin: 15px;
+}
+.jumbotron{
+  background-color: #E1F2FF;
+  text-align: center;
+  color: #4B5E63;
+}
+.jumbotron .profilepic{
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: auto;
+}
+.main-content{
+  width: 550px;
+  margin: auto;
+}
+.main-content h1{
+  font-family: "Times New Roman", Times, serif;
+}
+.main-content .article{
+  width: 100%;
+}
+.post-publish-date{
+  font-style: italic;
+  color: lightgrey;
+}
+.form-area{
+  width: 550px;
+  margin: auto;
+}
+.form-area input{
+  width: 100%;
+}
+.posting-area{
+  height: 300px;
+  width: 100%;
+}
+.new-post, .edit-post{
+  text-align: center;
+}
+.back-button{
+  width: 550px;
+  margin: auto;
+}
+.back-button .btn-info{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+footer{
+  padding: 20px;
+  height: 150px;
+  background-color: lightgrey;
+  text-align: center;
+}
