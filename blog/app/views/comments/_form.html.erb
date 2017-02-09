@@ -1,17 +1,18 @@
-<%= form_for ([@blog, @blog.comments.build]) do |f| %>
-<p>
+<%= form_for ([@blog, @blog.comments.build, :validate => true]) do |f| %>
+<div class="form-group">
   <%= f.label :user %><br>
   <%= f.text_field :user %>
-</p>
-<p>
+</div>
+<div class="form-group">
   <%= f.label :email %><br>
-  <%= f.text_field :email, validate: { presence: true } %>
-</p>
-<p>
+  <%= f.text_field :email %>
+
+</div>
+<div class="form-group">
   <%= f.label :remark %><br>
-  <%= f.text_area :remark, validate: { presence: true } %>
-</p>
-<p>
+  <%= f.text_area :remark %>
+</div>
+
   <%= f.submit %>
-</p>
+
 <% end %>
