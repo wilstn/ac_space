@@ -23,5 +23,38 @@
     <%= link_to 'Destroy', blog_path(@blog),
             method: :delete,
             data: {confirm: 'Are you sure?'} %>
-  
+    <span>&nbsp|&nbsp&nbsp</span>
+
+    <h2>Comments</h2>
+      <% @blog.comments.each do |comment| %>
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.user %>
+    </p>
+
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.remark %>
+    </p>
+      <% end %>
+
+    <h2>Add a comment:</h2>
+      <%= form_for([@blog, @blog.comments.build]) do |f| %>
+    <p>
+      <%= f.label :user %><br>
+      <%= f.text_field :user %>
+    </p>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :remark %><br>
+      <%= f.text_area :remark %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+      <% end %>
+
 </div>

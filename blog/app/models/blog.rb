@@ -1,4 +1,6 @@
 class Blog < ApplicationRecord
+  has_many :comments
+
   validates :title, uniqueness: true,
                     length: { minimum: 20 },
                     presence: true
