@@ -1,5 +1,5 @@
 .main-body{
-  top: 66px;
+  top: 56px;
   margin-bottom: 150px;
   position: relative;
 }
@@ -16,4 +16,10 @@
 .post-publish-date{
   font-style: italic;
   color: lightgrey;
+}
+.comment-box{
+  border-width: 2px;
+  border-style: solid;
+  padding: 5px;
+  margin: 5px;
 }

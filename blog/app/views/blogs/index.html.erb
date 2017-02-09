@@ -12,8 +12,9 @@
       <h2><%= link_to blog_post.title, blog_path(blog_post) %></h2>
       <p class="post-publish-date">Posted on <%= blog_post.created_at.strftime("%d %b %y")%></p>
       <hr>
-      <main><%= markdown(blog_post.post) %></main>
-      <%= link_to 'View Comments', blog_path(blog_post)%>
+      <main><%= markdown(blog_post.post) %></main><br>
+      <% kilo = blog_post.comments.count.to_s + ' comments' %>
+      <%= link_to kilo, blog_path(blog_post, anchor: 'commentables')  %>
     </article>
   <% end %>
   <%= paginate @blogs %>

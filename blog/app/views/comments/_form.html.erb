@@ -5,11 +5,11 @@
 </p>
 <p>
   <%= f.label :email %><br>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, validate: { presence: true } %>
 </p>
 <p>
   <%= f.label :remark %><br>
-  <%= f.text_area :remark %>
+  <%= f.text_area :remark, validate: { presence: true } %>
 </p>
 <p>
   <%= f.submit %>
