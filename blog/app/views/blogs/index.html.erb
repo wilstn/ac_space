@@ -13,6 +13,7 @@
       <p class="post-publish-date">Posted on <%= blog_post.created_at.strftime("%d %b %y")%></p>
       <hr>
       <main><%= markdown(blog_post.post) %></main>
+      <%= link_to 'View Comments', blog_path(blog_post)%>
     </article>
   <% end %>
   <%= paginate @blogs %>

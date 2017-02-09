@@ -24,37 +24,18 @@
             method: :delete,
             data: {confirm: 'Are you sure?'} %>
     <span>&nbsp|&nbsp&nbsp</span>
+    <%= link_to 'Add Comment', new_blog_comment_path(@blog) %>
 
     <h2>Comments</h2>
       <% @blog.comments.each do |comment| %>
-    <p>
-      <strong>Commenter:</strong>
-      <%= comment.user %>
-    </p>
-
-    <p>
-      <strong>Comment:</strong>
+    <p>Commenter: <%= comment.user %> </p>
+    <p>Comment:
       <%= comment.remark %>
     </p>
-      <% end %>
-
-    <h2>Add a comment:</h2>
-      <%= form_for([@blog, @blog.comments.build]) do |f| %>
+    <p><%= link_to 'Edit', edit_blog_comment_path(@blog, comment) %></p>
     <p>
-      <%= f.label :user %><br>
-      <%= f.text_field :user %>
-    </p>
-    <p>
-      <%= f.label :email %><br>
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :remark %><br>
-      <%= f.text_area :remark %>
-    </p>
-    <p>
-      <%= f.submit %>
+      <%= link_to 'Destroy', blog_comment_path(@blog, comment),
+              method: :delete %>
     </p>
       <% end %>
-
 </div>
