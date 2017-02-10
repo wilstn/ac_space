@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
   def new
     @blog = Blog.find(params[:blog_id])
+    @comment = @blog.comments.build
   end
 
   def edit
@@ -28,9 +29,15 @@ class CommentsController < ApplicationController
   end
 
   def create
-    blog = Blog.find(params[:blog_id])
-    @comment = blog.comments.create(comment_params)
-    redirect_to blog_path(blog)
+    @blog = Blog.find(params[:blog_id])
+    @comment = @blog.comments.new(comment_params)
+
+    if @comment.save
+      redirect_to blog_path(params[:blog_id])
+    else
+      render 'new'
+    end
+
   end
 
   def destroy
