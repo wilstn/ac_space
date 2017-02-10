@@ -1,0 +1,41 @@
+<div class="main-content">
+
+    <h2><%= @blog.title %></h2>
+    <p class="post-publish-date">Posted on <%= @blog.created_at.strftime("%d %b %y")%></p>
+    <p>
+      <strong>Category:</strong>
+      <%= @blog.category %>
+    </p>
+    <p>
+      <strong>Author:</strong>
+      <%= @blog.author %>
+    </p>
+
+    <article>
+      <%= simple_format(@blog.post) %>
+    </article>
+
+    <br>
+    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+    <%= link_to 'Edit', edit_blog_path(@blog) %>
+    <span>&nbsp|&nbsp&nbsp</span>
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <%= link_to 'Destroy', blog_path(@blog),
+            method: :delete,
+            data: {confirm: 'Are you sure?'} %>
+    <span>&nbsp|&nbsp&nbsp</span>
+    <%= link_to 'Add Comment', new_blog_comment_path(@blog) %>
+
+    <h2>Comments</h2>
+      <% @blog.comments.each do |comment| %>
+    <p>Commenter: <%= comment.user %> </p>
+    <p>Comment:
+      <%= comment.remark %>
+    </p>
+    <p><%= link_to 'Edit', edit_blog_comment_path(@blog, comment) %></p>
+    <p>
+      <%= link_to 'Destroy', blog_comment_path(@blog, comment),
+              method: :delete %>
+    </p>
+      <% end %>
+</div>

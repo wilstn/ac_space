@@ -14,7 +14,9 @@
     <nav class="navbar navbar-default">
       <%= button_to "Add Post", new_blog_path, :class => "btn btn-default pull-right", :method => :get %>
     </nav>
-    <%= yield %>
+    <div class="main-body">
+      <%= yield %>
+    </div>
     <footer>
       &copy; A Student's blog
     </footer>
