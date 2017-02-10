@@ -36,8 +36,7 @@
           <p><%= comment.remark %></p>
           <p>
             <%= link_to 'Edit', edit_blog_comment_path(@blog, comment) %>
-            <span>&nbsp|&nbsp&nbsp</span>
-            <%= link_to 'Destroy', blog_comment_path(@blog, comment), method: :delete %>
+            <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, blog_comment_path(@blog, comment), :class => "close pull-right", method: :delete %>
           </p>
         </div>
     <% end %>
