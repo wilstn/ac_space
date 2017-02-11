@@ -1,7 +1,17 @@
 
 <p><%= @book.title %></p>
 <p><%= @book.author %></p>
-<p><%= @book.genre %>></p>
+<p><%= @book.genre %></p>
 <p><%= @book.summary %></p>
 
+<div>
+  <% @book.reviews.each do |review| %>
+    <p><%= review.reviewer %></p>
+    <p><%= review.rating %></p>
+    <p><%= review.post %></p>
+    <p><%= review.created_at %></p>
+  <% end %>
+</div>
+
 <%= link_to 'Back', books_path %>
+<%= link_to 'Add Review', new_book_review_path(@book) %>

@@ -4,16 +4,16 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @book = Book.find(params[:id])
-    @review = @book.Review.build
+    @book = Book.find(params[:book_id])
+    @review = @book.reviews.build
   end
 
   def create
-    @book = Book.find(params[:id])
-    @review = @book.Review.new(review_params)
+    @book = Book.find(params[:book_id])
+    @review = @book.reviews.new(review_params)
 
     if @review.save
-      redirect_to book_path(:book_id)
+      redirect_to book_path(params[:book_id])
     else
       render 'new'
     end
