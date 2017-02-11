@@ -1,5 +1,5 @@
 <div>
-  <%= form_for ([@book, @review]) do |f| %>
+  <%= form_for [@book, @review] do |f| %>
     <p>
       <%= f.label :reviewer %>
       <%= f.text_field :reviewer %>
@@ -12,7 +12,7 @@
       <%= f.label :rating %>
       <%= f.number_field :rating %>
     </p>
-    <%= f.submit 'Post Review' %>
+    <%= f.submit 'Post Review'%>
   <% end %>
 </div>
 <%= link_to "Back to post", book_path(@book) %>

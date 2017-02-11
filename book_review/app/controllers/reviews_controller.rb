@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Book.find(params[:id]).Review.all
+    @reviews = Book.find(params[:book_id]).Review.all
   end
 
   def new
@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review = @book.reviews.new(review_params)
 
     if @review.save
-      redirect_to book_path(params[:book_id])
+      redirect_to book_path(@book)
     else
       render 'new'
     end
