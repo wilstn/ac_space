@@ -8,6 +8,12 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def search
+    search_value = params[:search]
+    @books = Book.where("summary like ?", "%#{search_value}%")
+    render 'index'
+  end
+
   def new
     @book = Book.new
   end

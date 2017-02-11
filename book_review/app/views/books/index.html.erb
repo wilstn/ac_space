@@ -1,5 +1,12 @@
 <%= link_to 'Add Book', new_book_path %>
 <div>
+  <%= form_for :search, url: search_books_path, method: :post do |f| %>
+  <%= text_field_tag :search, nil, placeholder: "Search books" %>
+  <%= submit_tag 'Search'%>
+  <% end %>
+</div>
+
+<div>
   <% @books.each do |book| %>
   <p>
     <%= book.title %>
