@@ -5,12 +5,12 @@ class ReviewsController < ApplicationController
 
   def new
     @book = Book.find(params[:book_id])
-    @review = @book.reviews.build
+    @review = @book.review.build
   end
 
   def create
     @book = Book.find(params[:book_id])
-    @review = @book.reviews.new(review_params)
+    @review = @book.review.new(review_params)
 
     if @review.save
       redirect_to book_path(@book)
@@ -20,12 +20,26 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:book_id])
+    @review = Review.find(params[:id])
   end
 
   def update
+    @book = Book.find(params[:book_id])
+    @review = Review.find(params[:id])
+
+    if @review.update(review_params)
+      redirect_to book_path(@book)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    book = Book.find(params[:book_id])
+    @review = book.review.find(params[:id])
+    @review.destroy
+    redirect_to book_path(book)
   end
 
   private
