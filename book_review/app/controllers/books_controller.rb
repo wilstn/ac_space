@@ -2,22 +2,23 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    if params[:search]
-      @books = Book.search(params[:search])
-    else
-      @books = Book.all
-    end
+    # if params[:search]
+    #   @books = Book.search(params[:search])
+    # else
+    #   @books = Book.all
+    # end
   end
 
   def show
     @book = Book.find(params[:id])
   end
 
-  # def search
-  #   search_value = params[:search]
-  #   @books = Book.where("summary like ?", "%#{search_value}%")
-  #   render 'index'
-  # end
+  def search
+    @search_value = params[:search]
+    # @books = Book.where("summary like ?", "%#{search_value}%")
+    @books = Book.search(params[:search])
+    render 'search'
+  end
 
   def new
     @book = Book.new

@@ -1,27 +1,26 @@
-<%= link_to 'Add Book', new_book_path %>
-<div>
-  <%= form_for :search, url: books_path, method: :get do |f| %>
-  <%= text_field_tag :search, nil, placeholder: "Search books" %>
-  <%= submit_tag 'Search'%>
-  <% end %>
+<div class="jumbotron">
+  <div class="img-overlay">
+    <h1>A Book Review</h1>
+    <div class="search-field">
+      <%= form_for :search, url: search_books_path, method: :post, class: "input-field" do |f| %>
+      <%= text_field_tag :search, nil, placeholder: " Search by title, author, genre..." %>
+      <%= submit_tag 'Find Book', class: "btn btn-default"%>
+      <% end %>
+    </div>
+    <p>Find the books you like and read their reviews..</p>
+  </div>
 </div>
 
-<div>
-  <% if @books.present? %>
-  <div>
-    <% @books.each do |book| %>
-    <p>
-      <%= book.title %>
-      <%= book.author %>
-      <%= book.genre %>
-      <%= book.summary %>
+
+<div class="container all-books">
+  <% @books.each do |book| %>
+    <h3><%= link_to book.title, book_path(book) %></h3>
+    <p>Author: <%= book.author %></p>
+    <p>Genre: <%= book.genre %></p>
+    <article><%= truncate(book.summary.html_safe, :length => 300){link_to 'Read more', book_path(book)} %></article>
+    <p class="date-publish">
+      <br>
+      Added on <%= book.created_at.strftime("%d %b %y") %>
     </p>
-      <%= link_to 'Show', book_path(book) %>
-      <%= link_to 'Edit', edit_book_path(book) %>
-      <%= link_to 'Delete', book_path(book), method: :delete, data: {confirm: 'Are you sure?'} %>
-    <% end %>
-  </div>
-<% else %>
-  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
-<% end %>
+  <% end %>
 </div>

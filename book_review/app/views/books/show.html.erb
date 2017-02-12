@@ -1,19 +1,37 @@
+<div class="container all-books">
+  <h2><%= @book.title %></h2>
+  <p class="date-publish">
+    <br>
+    Added on <%= @book.created_at.strftime("%d %b %y") %>
+  </p>
+  <p>Author: <%= @book.author %></p>
+  <p>Genre: <%= @book.genre %></p>
+  <article><%= @book.summary %></article>
 
-<p><%= @book.title %></p>
-<p><%= @book.author %></p>
-<p><%= @book.genre %></p>
-<p><%= @book.summary %></p>
+  <br>
+  <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+  <%= link_to 'Edit', edit_book_path(@book) %>
+  <span>&nbsp|&nbsp&nbsp</span>
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  <%= link_to 'Delete', book_path(@book), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <span>&nbsp|&nbsp&nbsp</span>
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <%= link_to 'Add Review', new_book_review_path(@book) %>
+  <hr>
+  <h3>Reviews</h3>
 
-<div>
-  <% @book.review.each do |review| %>
-    <p><%= review.reviewer %></p>
-    <p><%= review.rating %></p>
-    <p><%= review.post %></p>
-    <p><%= review.created_at %></p>
-    <%= link_to 'Edit Review', edit_book_review_path(@book, review) %>
-    <%= link_to 'Delete', book_review_path(@book, review), method: :delete, data: {confirm: 'Are you sure?'}%>
-  <% end %>
+  <div>
+    <% @book.review.each do |review| %>
+      <div class="date-publish">
+        By <%= review.reviewer %>
+        <span> on <%= review.created_at.strftime("%d %b %y") %></span>
+      </div>
+      <p>Rating: <%= review.rating %></p>
+      <p><%= review.post %></p>
+
+      <%= link_to 'Edit Review', edit_book_review_path(@book, review) %>
+      <%= link_to 'Delete', book_review_path(@book, review), method: :delete, data: {confirm: 'Are you sure?'}%>
+    <% end %>
+  </div>
+
 </div>
-
-<%= link_to 'Back', books_path %>
-<%= link_to 'Add Review', new_book_review_path(@book) %>

@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-default">
+      <%= link_to '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, books_path, class: "btn btn-default pull-left home-btn" %>
+      <%= link_to 'Add Book', new_book_path, class: "btn btn-default pull-right add-book-btn" %>
+    </nav>
+    <div class="main-content">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="footer-div">
+        &copy;&nbsp;A Book Review 2017
+      </div>
+    </footer>
   </body>
 </html>
