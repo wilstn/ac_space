@@ -13,6 +13,11 @@ class ReviewsController < ApplicationController
     @review = @book.review.new(review_params)
 
     if @review.save
+      avg = @book.avg_rating
+      counter = @book.review.count - 1
+      hello = (@review[:rating] + counter * avg)/(counter + 1)
+      @book.update(avg_rating: hello)
+
       redirect_to book_path(@book)
     else
       render 'new'
@@ -29,6 +34,13 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     if @review.update(review_params)
+      total_rates = 0.0
+      @book.review.each do |review_obj|
+        total_rates += review_obj.rating
+      end
+      hello = (total_rates / @book.review.count).round(1)
+      @book.update(avg_rating: hello)
+
       redirect_to book_path(@book)
     else
       render 'edit'
@@ -36,10 +48,19 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:book_id])
-    @review = book.review.find(params[:id])
+    @book = Book.find(params[:book_id])
+    @review = @book.review.find(params[:id])
     @review.destroy
-    redirect_to book_path(book)
+
+    total_rates = 0.0
+
+    @book.review.each do |review_obj|
+      total_rates += review_obj.rating
+    end
+    hello = (total_rates / @book.review.count).round(1)
+    @book.update(avg_rating: hello)
+
+    redirect_to book_path(@book)
   end
 
   private

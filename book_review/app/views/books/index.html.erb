@@ -8,6 +8,7 @@
     </p>
     <p>Author: <%= book.author %></p>
     <p>Genre: <%= book.genre %></p>
+    <p>Average Rating: <%= book.avg_rating %></p>
     <article><%= truncate(book.summary.html_safe, :length => 300){link_to 'Read more', book_path(book)} %></article>
     <hr>
   <% end %>
