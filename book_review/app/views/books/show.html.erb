@@ -1,7 +1,6 @@
 <div class="container all-books">
   <h2><%= @book.title %></h2>
   <p class="date-publish">
-    <br>
     Added on <%= @book.created_at.strftime("%d %b %y") %>
   </p>
   <p>Author: <%= @book.author %></p>
@@ -18,19 +17,22 @@
   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
   <%= link_to 'Add Review', new_book_review_path(@book) %>
   <hr>
-  <h3>Reviews</h3>
+  <% kilo = @book.review.count%>
+  <h3><%= kilo %> Reviews</h3>
 
   <div>
     <% @book.review.each do |review| %>
+    <div class="each-review">
       <div class="date-publish">
         By <%= review.reviewer %>
         <span> on <%= review.created_at.strftime("%d %b %y") %></span>
       </div>
-      <p>Rating: <%= review.rating %></p>
+      <p>Rating: <%= review.rating %>/5</p>
       <p><%= review.post %></p>
-
       <%= link_to 'Edit Review', edit_book_review_path(@book, review) %>
+      <span>&nbsp|&nbsp&nbsp</span>
       <%= link_to 'Delete', book_review_path(@book, review), method: :delete, data: {confirm: 'Are you sure?'}%>
+    </div>
     <% end %>
   </div>
 

@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.page(params[:page]).per(4).order('created_at')
     # if params[:search]
     #   @books = Book.search(params[:search])
     # else
@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   def search
     @search_value = params[:search]
     # @books = Book.where("summary like ?", "%#{search_value}%")
-    @books = Book.search(params[:search])
+    @books = Book.search(params[:search]).page(params[:page]).per(4).order('created_at')
     render 'search'
   end
 

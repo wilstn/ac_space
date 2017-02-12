@@ -15,12 +15,13 @@
 <div class="container all-books">
   <% @books.each do |book| %>
     <h3><%= link_to book.title, book_path(book) %></h3>
+    <p class="date-publish">
+      Added on <%= book.created_at.strftime("%d %b %y") %>
+    </p>
     <p>Author: <%= book.author %></p>
     <p>Genre: <%= book.genre %></p>
     <article><%= truncate(book.summary.html_safe, :length => 300){link_to 'Read more', book_path(book)} %></article>
-    <p class="date-publish">
-      <br>
-      Added on <%= book.created_at.strftime("%d %b %y") %>
-    </p>
+    <hr>
   <% end %>
+<%= paginate @books %>
 </div>

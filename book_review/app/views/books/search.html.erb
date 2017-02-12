@@ -15,6 +15,7 @@
       </div>
       <%#= link_to 'Details', book_path(book)%>
     <% end %>
+    <%= paginate @books %>
   <% else %>
     <p>There are no books containing the term(s) <%= params[:search] %>.</p>
   <% end %>
