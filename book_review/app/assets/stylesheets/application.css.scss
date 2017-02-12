@@ -1,3 +1,7 @@
+/*
+ *= require rails_bootstrap_forms
+ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "app-navbar";
@@ -6,3 +10,4 @@
 @import "app-index";
 @import "app-search";
 @import "app-review";
+@import "app-book-form";

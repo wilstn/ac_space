@@ -2,7 +2,7 @@
   <div class="img-overlay">
     <h1>A Book Review</h1>
     <div class="search-field">
-      <%= form_for :search, url: search_books_path, method: :post, class: "input-field" do |f| %>
+      <%= bootstrap_form_for :search, url: search_books_path, method: :post, class: "input-field" do |f| %>
       <%= text_field_tag :search, nil, placeholder: " Search by title, author, genre..." %>
       <%= submit_tag 'Find Book', class: "btn btn-default"%>
       <% end %>
