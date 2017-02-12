@@ -11,6 +11,14 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+
+    total_rates = 0.0
+
+    @book.review.each do |review_obj|
+      total_rates += review_obj.rating
+    end
+
+    @avg_rating = (total_rates / @book.review.count).round(1)
   end
 
   def search
