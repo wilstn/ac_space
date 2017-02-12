@@ -1,0 +1,6 @@
+<%= bootstrap_form_for [@book, @review] do |f| %>
+  <%= f.text_field :reviewer %>
+  <%= f.text_area :post %>
+  <%= f.number_field :rating %>
+  <%= f.submit 'Save Review'%>
+<% end %>

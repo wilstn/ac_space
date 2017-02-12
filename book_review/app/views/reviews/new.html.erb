@@ -1,18 +1,5 @@
-<div>
-  <%= form_for [@book, @review] do |f| %>
-    <p>
-      <%= f.label :reviewer %>
-      <%= f.text_field :reviewer %>
-    </p>
-    <p>
-      <%= f.label :post %>
-      <%= f.text_area :post %>
-    </p>
-    <p>
-      <%= f.label :rating %>
-      <%= f.number_field :rating %>
-    </p>
-    <%= f.submit 'Post Review'%>
-  <% end %>
+<div class="book-form">
+  <h3 style="text-align: center">Add a book review</h3>
+  <%= render 'form' %>
+  <%= link_to "Back to post", book_path(@book), :class => "btn btn-primary back-btn" %>
 </div>
-<%= link_to "Back to post", book_path(@book) %>
