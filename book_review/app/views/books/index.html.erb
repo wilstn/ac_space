@@ -1,21 +1,27 @@
 <%= link_to 'Add Book', new_book_path %>
 <div>
-  <%= form_for :search, url: search_books_path, method: :post do |f| %>
+  <%= form_for :search, url: books_path, method: :get do |f| %>
   <%= text_field_tag :search, nil, placeholder: "Search books" %>
   <%= submit_tag 'Search'%>
   <% end %>
 </div>
 
 <div>
-  <% @books.each do |book| %>
-  <p>
-    <%= book.title %>
-    <%= book.author %>
-    <%= book.genre %>
-    <%= book.summary %>
-  </p>
-    <%= link_to 'Show', book_path(book) %>
-    <%= link_to 'Edit', edit_book_path(book) %>
-    <%= link_to 'Delete', book_path(book), method: :delete, data: {confirm: 'Are you sure?'} %>
-  <% end %>
+  <% if @books.present? %>
+  <div>
+    <% @books.each do |book| %>
+    <p>
+      <%= book.title %>
+      <%= book.author %>
+      <%= book.genre %>
+      <%= book.summary %>
+    </p>
+      <%= link_to 'Show', book_path(book) %>
+      <%= link_to 'Edit', edit_book_path(book) %>
+      <%= link_to 'Delete', book_path(book), method: :delete, data: {confirm: 'Are you sure?'} %>
+    <% end %>
+  </div>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
 </div>
