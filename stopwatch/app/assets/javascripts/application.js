@@ -66,6 +66,7 @@ $(document).ready(function(){
   });
 
   $('#reset').click(function(){
+    clearInterval(starter);
     resetTimer();
     $('.ms').text(msCount);
     $('.sec').text(secCount);
