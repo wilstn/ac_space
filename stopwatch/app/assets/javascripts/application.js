@@ -50,17 +50,26 @@ function resetTimer(){
 };
 
 var starter;
+var started = 0;
 
 $(document).ready(function(){
   $('#start').click(function(){
-    starter = setInterval(msTimer, 100);
+    if(started == 0){
+      started = 1;
+      starter = setInterval(msTimer, 100);
+    }
   });
 
   $('#pause').click(function(){
     clearInterval(starter);
+    started = 0;
   });
 
-  $('#pause').click(function(){
+  $('#reset').click(function(){
     resetTimer();
+    $('.ms').text(msCount);
+    $('.sec').text(secCount);
+    $('.min').text(minCount);
+    started = 0;
   });
 });
