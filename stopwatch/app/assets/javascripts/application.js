@@ -49,9 +49,11 @@ function resetTimer(){
   minCount = 0;
 };
 
+var starter;
+
 $(document).ready(function(){
   $('#start').click(function(){
-    setInterval(msTimer, 100);
+    starter = setInterval(msTimer, 100);
   });
 
   $('#pause').click(function(){
@@ -59,7 +61,6 @@ $(document).ready(function(){
   });
 
   $('#pause').click(function(){
-    clearInterval(starter);
     resetTimer();
   });
 });
