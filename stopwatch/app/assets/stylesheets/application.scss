@@ -1,0 +1,21 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.main-content h1{
+  text-align: center;
+  font-size: 500%;
+}
+.clockdiv{
+  margin: auto;
+  table-layout: fixed;
+  width: 100%;
+  border: 3px solid black;
+}
+th, td{
+  text-align: center;
+  margin: 20px;
+  font-size: 300%;
+}
+.clockdiv button{
+  width: 80%;
+}

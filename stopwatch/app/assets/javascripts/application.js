@@ -14,38 +14,52 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
 
-var msecCount = 0;
+var msCount = 0;
 var secCount = 0;
-var minCount = 0
+var minCount = 0;
 
+function msTimer(){
+  msCount++;
+  if(msCount == 10){
+    secTimer();
+    msCount = 0;
+  };
+  $('.ms').text(msCount);
+};
 
-function msecTimer(){
-  msecCount ++;
-  $('.milliseconds').text(msecCount);
-  if (msecCount % 10 == 0){
-    secCount ++;
-    $('.seconds').text(secCount);
+function secTimer(){
+  secCount++;
+  if(secCount == 60){
+    minTimer();
+    secCount = 0;
   };
-  if (msecCount % 600 == 0){
-    minCount ++;
-    $('.minute').text(minCount);
-  };
-  // if (msecCount == 10){
-  //   msecCount = 0;
-  // };
-  // if (secCount == 60){
-  //   secCount = 0;
-  // };
+  $('.sec').text(secCount);
+};
+
+function minTimer(){
+  minCount++;
+  $('.min').text(minCount);
+};
+
+function resetTimer(){
+  msCount = 0;
+  secCount = 0;
+  minCount = 0;
 };
 
 $(document).ready(function(){
   $('#start').click(function(){
-    setInterval(msecTimer, 100);
+    setInterval(msTimer, 100);
   });
+
   $('#pause').click(function(){
-    clearInterval(msecCount);
-    clearInterval(secCount);
-    clearInterval(minCount);
+    clearInterval(starter);
   });
-})
+
+  $('#pause').click(function(){
+    clearInterval(starter);
+    resetTimer();
+  });
+});

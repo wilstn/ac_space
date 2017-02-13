@@ -1,19 +1,19 @@
-h1 jstimers
-
-div#clockdiv
-  |minute:
-  span.minute 
-  
-  |seconds:
-  span.seconds 
-
-  |milliseconds: 
-  span.milliseconds 
-
-  div.buttons
-    br
-      button#start type="button" Start
-    br  
-      button#pause type="button" Pause
-    br
-      button#reset type="button" Reset
+div.container-fluid.main-content
+  h1 jstimers
+  table.clockdiv
+    tr
+      th min
+      th sec
+      th ms
+    tr
+      td.min 00
+      td.sec 00
+      td.ms 00
+    tr
+      th
+        button#reset.btn.btn-danger type="button" Reset  
+      th
+        button#pause.btn.btn-warning type="button" Pause
+      th
+        button#start.btn.btn-success type="button" Start
+      
