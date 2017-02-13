@@ -1,0 +1,2 @@
+class Jstimer < ApplicationRecord
+end

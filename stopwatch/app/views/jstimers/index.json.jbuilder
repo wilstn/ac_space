@@ -1,0 +1,1 @@
+json.array! @jstimers, partial: 'jstimers/jstimer', as: :jstimer

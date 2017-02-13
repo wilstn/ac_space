@@ -1,0 +1,9 @@
+= form_for @jstimer do |f|
+  - if @jstimer.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@jstimer.errors.count, "error")} prohibited this jstimer from being saved:"
+      ul
+        - @jstimer.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit
