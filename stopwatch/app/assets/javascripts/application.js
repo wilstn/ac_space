@@ -16,61 +16,61 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-var msCount = 0;
-var secCount = 0;
-var minCount = 0;
-
-function msTimer(){
-  msCount++;
-  if(msCount == 10){
-    secTimer();
-    msCount = 0;
-  };
-  $('.ms').text(msCount);
-};
-
-function secTimer(){
-  secCount++;
-  if(secCount == 60){
-    minTimer();
-    secCount = 0;
-  };
-  $('.sec').text(secCount);
-};
-
-function minTimer(){
-  minCount++;
-  $('.min').text(minCount);
-};
-
-function resetTimer(){
-  msCount = 0;
-  secCount = 0;
-  minCount = 0;
-};
-
-var starter;
-var started = 0;
-
-$(document).ready(function(){
-  $('#start').click(function(){
-    if(started == 0){
-      started = 1;
-      starter = setInterval(msTimer, 100);
-    }
-  });
-
-  $('#pause').click(function(){
-    clearInterval(starter);
-    started = 0;
-  });
-
-  $('#reset').click(function(){
-    clearInterval(starter);
-    resetTimer();
-    $('.ms').text(msCount);
-    $('.sec').text(secCount);
-    $('.min').text(minCount);
-    started = 0;
-  });
-});
+// var msCount = 0;
+// var secCount = 0;
+// var minCount = 0;
+//
+// function msTimer(){
+//   msCount++;
+//   if(msCount == 10){
+//     secTimer();
+//     msCount = 0;
+//   };
+//   $('.ms').text(msCount);
+// };
+//
+// function secTimer(){
+//   secCount++;
+//   if(secCount == 60){
+//     minTimer();
+//     secCount = 0;
+//   };
+//   $('.sec').text(secCount);
+// };
+//
+// function minTimer(){
+//   minCount++;
+//   $('.min').text(minCount);
+// };
+//
+// function resetTimer(){
+//   msCount = 0;
+//   secCount = 0;
+//   minCount = 0;
+// };
+//
+// var starter;
+// var started = 0;
+//
+// $(document).ready(function(){
+//   $('#start').click(function(){
+//     if(started == 0){
+//       started = 1;
+//       starter = setInterval(msTimer, 100);
+//     }
+//   });
+//
+//   $('#pause').click(function(){
+//     clearInterval(starter);
+//     started = 0;
+//   });
+//
+//   $('#reset').click(function(){
+//     clearInterval(starter);
+//     resetTimer();
+//     $('.ms').text(msCount);
+//     $('.sec').text(secCount);
+//     $('.min').text(minCount);
+//     started = 0;
+//   });
+// });
