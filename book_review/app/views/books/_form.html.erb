@@ -1,8 +1,0 @@
-<%= bootstrap_form_for @book, html: { multipart: true } do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :author %>
-  <%= f.text_field :genre %>
-  <%= f.file_field :image %>
-  <%= f.text_area :summary %>
-  <%= f.submit 'Save'%>
-<% end %>
