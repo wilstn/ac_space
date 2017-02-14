@@ -1,10 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-image: url('http://1079638729.rsc.cdn77.org/pic/v2/gallery/preview/fon-logotipy-yumor-16085.jpg');
+  background-size:cover;
+}
+
 .main-content h1{
   text-align: center;
   font-size: 500%;
 }
+
 .clockdiv{
   margin: auto;
   table-layout: fixed;
