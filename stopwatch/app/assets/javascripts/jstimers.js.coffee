@@ -30,23 +30,22 @@ class @TimerWidget
       @minCount++
       @min.text(@minCount)
 
-  is_paused = false # default boolean value to check if it's running
+  is_paused = true # default boolean value to check if it's running
 
   bind_start: =>  # use fat arrows to pass in the scope of whole class always
     @start_button.on 'click', =>
-      is_paused = false
-      if is_paused == false
+      if is_paused == true
+        is_paused = false
         @starter = setInterval(this.addThis, 1000)
-      else
+
 
 
   bind_stop: =>
     @stop_button.on 'click', =>
-        is_paused = true
-        if is_paused == true
+        if is_paused == false
+          is_paused = true
           clearInterval(@starter)
-        else
-          @starter = setInterval(this.addThis, 1000)
+
 
   bind_reset: =>
     @reset_button.on 'click', =>
@@ -55,7 +54,7 @@ class @TimerWidget
       @minCount = 0
       @sec.text(@secCount)
       @min.text(@minCount)
-      @starter = setInterval(this.addThis, 1000)
+      is_paused = true
 
 $('document').ready ->
   t = new TimerWidget
