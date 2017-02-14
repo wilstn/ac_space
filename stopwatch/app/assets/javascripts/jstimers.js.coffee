@@ -30,15 +30,23 @@ class @TimerWidget
       @minCount++
       @min.text(@minCount)
 
+  is_paused = false # default boolean value to check if it's running
+
   bind_start: =>  # use fat arrows to pass in the scope of whole class always
     @start_button.on 'click', =>
-      @starter = setInterval(this.addThis, 1000)
-      @start_button.unbind 'click'
+      is_paused = false
+      if is_paused == false
+        @starter = setInterval(this.addThis, 1000)
+      else
+
 
   bind_stop: =>
     @stop_button.on 'click', =>
-      clearInterval(@starter)
-      @starter = setInterval(this.addThis, 1000)
+        is_paused = true
+        if is_paused == true
+          clearInterval(@starter)
+        else
+          @starter = setInterval(this.addThis, 1000)
 
   bind_reset: =>
     @reset_button.on 'click', =>
