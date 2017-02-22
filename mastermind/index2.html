@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="custom.css">
+  <title>Mastermind</title>
+</head>
+<body>
+  <h3>Answer</h3>
+  <table>
+    <tr id="answerRow">
+      <td><img src="empty.png"></td>
+      <td><img src="empty.png"></td>
+      <td><img src="empty.png"></td>
+      <td><img src="empty.png"></td>
+    </tr>
+  </table>
+
+  <table class="inputs">
+    <tr id="row-10">
+      <td>
+        10
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-9">
+      <td>
+        9
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-8">
+      <td>
+        8
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-7">
+      <td>
+        7
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-6">
+      <td>
+        6
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-5">
+      <td>
+        5
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-4">
+      <td>
+        4
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-3">
+      <td>
+        3
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-2">
+      <td>
+        2
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+    <tr id="row-1">
+      <td>
+        1
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="empty.png">
+      </td>
+      <td class="check-clue">
+        <table>
+          <tr>
+            <td class="check1"><img src="empty.png"></td>
+            <td class="check2"><img src="empty.png"></td>
+          </tr>
+          <tr>
+            <td class="check3"><img src="empty.png"></td>
+            <td class="check4"><img src="empty.png"></td>
+          </tr>
+        </table>
+      </td>
+      <td><input class="buttonClick" type="button" value="Check"></td>
+    </tr>
+  </table>
+
+  <h3>Pick a color</h3>
+  <table>
+    <tr class="color-options">
+      <td><img src="black.png" id="black" name="black" draggable="true" ondragstart="drag(event)"></td>
+      <td><img src="blue.png" id="blue" name="blue" draggable="true" ondragstart="drag(event)"></td>
+      <td><img src="green.png" id="green" name="green" draggable="true" ondragstart="drag(event)"></td>
+      <td><img src="red.png" id="red" name="red" draggable="true" ondragstart="drag(event)"></td>
+      <td><img src="orange.png" id="orange" name="orange" draggable="true" ondragstart="drag(event)"></td>
+      <td><img src="yellow.png" id="yellow" name="yellow" draggable="true" ondragstart="drag(event)"></td>
+    </tr>
+  </table>
+
+  <button class="resetGame">Reset game</button>
+  <button class="showAnswer">Show Answer</button>
+  <script
+			  src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+<script src="myscripts2.js"></script>
+</body>
+</html>

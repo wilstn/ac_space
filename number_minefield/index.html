@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="myscript.js"></script>
+  <link rel="stylesheet" type="text/css" href="custom.css">
+  <title>Number Minefield</title>
+</head>
+<body>
+  <h2>Input a number from 0 to 100</h2>
+  <p>If you hit the number chosen by computer, you lose.</p>
+  <table>
+    <tr>
+      <td>Min</td>
+      <td style="text-align: center;">Input</td>
+      <td>Max</td>
+    </tr>
+    <tr>
+      <td><span id="min">0</span>&nbsp;<</td>
+      <td><input type="text" id="user-input" onkeypress="getUserInput()"></td>
+      <td><&nbsp;<span id="max">100</span></td>
+    </tr>
+  </table>
+  <div id="result"></div>
+  <div id="image"></div>
+</body>
+</html>
